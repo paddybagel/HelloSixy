@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home | E8 Make</title>
+        <script type="text/javascript" src="plugins/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"  href="plugins/font-awesome-4.6.3/css/font-awesome.min.css" type='text/css'/>
+        <link rel="stylesheet"  href='plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css' type='text/css'/>
+        <link rel="stylesheet"  href='styles/custom/bootstrap_override.css' type='text/css'/>
+        <link rel="stylesheet"  href='styles/custom/e8make.css' type='text/css'/>
+        <script type="text/javascript" src="scripts/custom/e8make.js"></script>
+        <meta name="pinterest" content="nopin" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>    
+        <div id="mobile_detector"></div>      
+        <div class="full">
+                <div class="row front_page">
+                        <div class="col-md-4 col-md-offset-4 main_page_image">
+                                <div class="table">
+                                        <div class="table_cell">
+                                                <img id="e8_make_logo"  src="content/images/pictures/E8 MAKE logo-01.png"/>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="row down_icon">
+                        <div class="col-offset-md-5 col-md-2 text-center">
+                                <span style="display: none;" class="glyphicon glyphicon-menu-down" data-lastdir="0" aria-hidden="true"></span>
+                        </div>
+                </div>
+                <div class="row details">
+                        <div id="Order_Prints_Container" class="open_dialog col-md-4 blue">
+                                <div class="table">
+                                        <div class="table_cell">
+                                                <h3>Order Prints</h3>
+                                        </div>
+                                </div>
+                        </div>
+                        <div id="Information_Container" class="open_dialog col-md-4 blue">
+                                <div class="table">
+                                        <div class="table_cell">
+                                                <h3>Information</h3>
+                                        </div>
+                                </div>
+                                <div id="Information_Dropdown">
+                                        <ul>
+                                                <li id="Open_DesignSpec_Dialog"><h3>Design Specification</h3></li>
+                                                <li class="dropdown_border"></li>
+                                                <li id="Open_FAQ_Dialog"><h3>FAQs</h3></li>
+                                        </ul>
+                                </div>
+                        </div>
+                        <div id="Contact_Container" class="open_dialog col-md-4 blue">
+                                <div class="table">
+                                        <div class="table_cell">
+                                                <h3>Contact</h3>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div id="Order_Prints" class="dialog_container hidden_page">
+                        <a class="close_box order_prints"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        <div class="table">
+                                <div class="table_cell">  
+                                        <div id="Contact_Form">
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                                <h1>Order Prints</h1>
+                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-md-6 contact_form_disabled" style="text-align: right;">
+                                                                <div class="contact_form_disabled_cover">
+                                                                        <h1 style="padding-top: 8%;">Form under construction, <br/> it'll be up soon.</h1>
+                                                                        <div></div>
+                                                                </div>
+                                                                <form>
+                                                                        <div class="form-group">
+                                                                                <input type="email" class="form-control" id="Input_Email" aria-describedby="emailHelp" placeholder="Email Address">
+                                                                        </div>
+                                                                        <div class="form-group" style="height: 33px;">
+                                                                                <label class="form-control label_file_upload" onclick="$('#Input_File_Upload').click();">File(s)</label>
+                                                                                <label class="form-control label_file_upload_button" onclick="$('#Input_File_Upload').click();"><i class="fa fa-upload" aria-hidden="true"></i></label>
+                                                                                <input type="file" class="hide" id="Input_File_Upload" multiple aria-describedby="emailHelp" placeholder="Files">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                                <textarea class="form-control" id="Input_Message" placeholder="Message" rows="3"></textarea>
+                                                                        </div>
+                                                                        <button type="submit" id="Input_Submit" class="btn btn-primary">Submit</button>
+                                                                </form>
+                                                        </div>
+                                                        <div class="col-md-6" style="text-align: left; vertical-align: top;">
+                                                                For all inquires please email us at <a href="mailto:hub@e8make.com?Subject=Hello!" target="_top" style="color: orange;">hub@e8make.com</a> and we will get back to you with a quote within an hour. 
+                                                                <br/>
+                                                                <br/>
+                                                                For anything urgent please call us on:
+                                                                <br/>
+                                                                <a><i class="fa fa-phone" aria-hidden="true"></i> 07792625599</a>
+                                                                <br/>
+                                                                <a><i class="fa fa-phone" aria-hidden="true"></i> 07864074050</a>
+                                                        </div> 
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div id="Information" class="dialog_container hidden_page">
+                        <a class="close_box dialog"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        <div class="table">
+                                <div class="table_cell">  
+                                         <div id="Information_Form">
+                                               <!-- <div class="row">
+                                                        <div class="col-md-12">
+                                                                <h1>3D Print</h1>
+                                                        </div>
+                                                </div>-->
+                                                <div class="row">
+                                                        <div class="col-md-6 printer printer1" style="">
+                                                                <div class="printer_overflow">
+                                                                        <div class="printer_header">
+                                                                                <img class="printer_image" src="content/images/pictures/formlabsicon-01.png"/>
+                                                                                <h3 class="printer_title">Form 2</h3>
+                                                                                <div class="material_icon_info">
+                                                                                        <h3></h3>
+                                                                                        <p>Temporary Text</p>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="body_container" data-direction="left">
+                                                                                <div class="row material_container standard">
+                                                                                        <div class="col-md-3">
+                                                                                                <img src="content/images/pictures/icons/materialicons-clear-transparent.png" data-material="Clear" data-material_description="This is clear." class="material_icon"/>
+                                                                                        </div>
+                                                                                        <div class="col-md-3">
+                                                                                                <img src="content/images/pictures/icons/materialicons-white.png" data-material="White" data-material_description="This is white." class="material_icon"/>
+                                                                                        </div>
+                                                                                        <div class="col-md-3">
+                                                                                                <img src="content/images/pictures/icons/materialicons-gray.png" data-material="Grey" data-material_description="This is grey." class="material_icon"/>
+                                                                                        </div>
+                                                                                        <div class="col-md-3">
+                                                                                                <img src="content/images/pictures/icons/materialicons-black.png" data-material="Black" data-material_description="This is black." class="material_icon"/>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row material_container premium">
+                                                                                        <div class="col-md-3 align_right">
+                                                                                                <img src="content/images/pictures/icons/materialicons-tough.png" data-material="Tough" data-material_description="This is tough." class="material_icon"/>
+                                                                                        </div>
+                                                                                        <div class="col-md-3">
+                                                                                                <img src="content/images/pictures/icons/materialicons-castable.png" data-material="Castable" data-material_description="This is castable." class="material_icon"/>
+                                                                                        </div>
+                                                                                        <div class="col-md-3 align_left">
+                                                                                                <img src="content/images/pictures/icons/materialicons-flexible.png" data-material="Flexable" data-material_description="This is flexable." class="material_icon"/>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="horizontal_line"></div>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Supported Wall Thickness " data-thickness="0.4mm" data-spec_description="A supported wall is one that is connected to other walls on two or more sides. A supported wall smaller than 0.4 mm may warp during the peel process." src="content/images/design_guide/Form Labs 2/minsupportedwall-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Unsupported Wall Thickness" data-thickness="0.6mm" data-spec_description="An unsupported wall is one that is connected to other walls on fewer than two sides. An unsupported wall that is smaller than 0.6 mm may warp or detach from the model during printing." src="content/images/design_guide/Form Labs 2/minunsupportedwall-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Maximum Unsupported Overhang Length" data-thickness="1.0mm" data-spec_description="An overhang refers to a part of the model that sticks out horizontally parallel to the build platform. Printing such features without supports is discouraged, as the layers cannot maintain their structure. Horizontal overhangs will be slightly deformed beyond 1 mm and become increasingly deformed as the length of the overhang increases." src="content/images/design_guide/Form Labs 2/maxunsupportedoverhang-01.png">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Unsupported Overhang Angle" data-thickness="19&deg; from level" data-spec_description="The overhang angle refers to the angle from horizontal that the overhang sticks out. Printing at an angle less than 19° could cause the overhang to break off the model during the peel process." src="content/images/design_guide/Form Labs 2/minunsupportedoverhangangleform-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Maximum Horizontal Support Span/Bridge" data-thickness="21 mm (5 mm width × 3 mm thick)" data-spec_description="A span is the distance between two intermediate supports of a structure. While printing horizontal spans is discouraged, certain geometries print well. For a 5 mm wide and 3 mm thick beam, spans longer than 21 mm are likely to fail. Wider beams must be kept shorter to avoid breaking during the peeling process." src="content/images/design_guide/Form Labs 2/maxbridge-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Vertical-Wire Diameter" data-thickness="0.3 mm (7 mm tall) - 1.5 mm (30 mm tall)" data-spec_description="A wire is a feature whose length is greater than two times its width. The ratio is key to printing wires; at 0.3 mm thickness you can print up to 7 mm tall before you start to see waving. 1.5 mm wires can get up to 30 mm tall without defects." src="content/images/design_guide/Form Labs 2/minverticalwireform-01.png">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Embossed Detail" data-thickness="0.1mm" data-spec_description="Embossed details are shallow raised features on your model, such as text. Details smaller than 0.1 mm in thickness and in height may not be visible on your print." src="content/images/design_guide/Form Labs 2/mindebosseddetail-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Engraved Detail" data-thickness="0.4mm" data-spec_description="Engraved details are imprinted or recessed features on your model. Details recessed less than 0.4 mm in thickness and in height may not be visible because they will be fused with the rest of the model during the print process." src="content/images/design_guide/Form Labs 2/minembosseddetail-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Clearance" data-thickness="0.5mm" data-spec_description="Clearance is the amount of distance needed between two moving parts of a model (e.g., the distance between gears or joints). A clearance of less than 0.5 mm may cause parts to fuse." src="content/images/design_guide/Form Labs 2/minclearance-01.png">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Hole Diameter" data-thickness="0.5mm" data-spec_description="Holes with a diameter less than 0.5 mm in the x, y, and z axes may close off during printing." src="content/images/design_guide/Form Labs 2/minholediameterform.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Drain Hole Diameter" data-thickness="3.5mm" data-spec_description="Drain holes are recommended for resin to escape in models that are a fully enclosed cavity (like a hollow sphere or hollow cylinder printed directly on the build platform). Without drain holes of at least 3.5 mm in diameter, the part may trap resin and lead to an <span style='color: red;'>explosion of the print</span>." src="content/images/design_guide/Form Labs 2/mindrainhole-01.png">
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="row button_container" style="padding-top: 50px;">
+                                                                                <div class="col-md-12 design_guide_buttons">
+                                                                                        <a class="design_guide active">Design Guide</a>
+                                                                                        <a class="design_guide_close"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-6 printer printer2" style="">
+                                                                <div class="printer_overflow">
+                                                                        <div class="printer_header">
+                                                                                <img class="printer_image" src="content/images/pictures/makerboticon-01.png"/>
+                                                                                <h3 class="printer_title">Maker Bot</h3>
+                                                                                <div class="material_icon_info">
+                                                                                        <h3></h3>
+                                                                                        <p></p>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="body_container" data-direction="right">
+                                                                                <div class="row material_container standard">
+                                                                                        <div class="col-md-3 align_right col-md-offset-3">
+                                                                                                <img src="content/images/pictures/icons/materialicons-black.png" data-material="Black" data-material_description="This is black." class="material_icon"/>
+                                                                                        </div>
+                                                                                        <div class="col-md-3 align_left">
+                                                                                                <img src="content/images/pictures/icons/materialicons-white.png" data-material="White" data-material_description="This is white." class="material_icon"/>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row material_container premium">
+                                                                                        <div class="col-md-3">
+                                                                                                <img src="content/images/pictures/icons/materialicons-color.png" data-material="Colour" data-material_description="Let us know which colour you would like." class="material_icon"/>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="horizontal_line"></div>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Supported Wall Thickness" data-thickness="0.8mm" data-spec_description="A supported wall is one that is connected to other walls on two or more sides. A supported wall smaller than 0.8 mm will not print properly." src="content/images/design_guide/makerbot/minsupportedwall-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Unsupported Wall Thickness" data-thickness="1.6mm" data-spec_description="An unsupported wall is one that is connected to other walls on fewer than two sides. An unsupported wall that is smaller than 1.6 mm will not print nicely." src="content/images/design_guide/makerbot/minunsupportedwall-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Maximum Unsupported Overhang Length" data-thickness="0.4mm" data-spec_description="An overhang refers to a part of the model that sticks out horizontally parallel to the build platform. Printing such features without supports is discouraged, as the layers cannot maintain their structure. Horizontal overhangs will be slightly deformed beyond 0.4 mm and become increasingly deformed as the length of the overhang increases." src="content/images/design_guide/makerbot/maxunsupportedoverhang-01.png">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Unsupported Overhang Angle" data-thickness="40&deg; from level" data-spec_description="The overhang angle refers to the angle from horizontal that the overhang sticks out. Printing at an angle less than 40° could cause the overhang to become undefined or not print completely." src="content/images/design_guide/makerbot/minunsupportedoverhanganglemakerbot-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Maximum Horizontal Support Span/Bridge" data-thickness="18 mm (5 mm width × 3 mm thick)" data-spec_description="A span is the distance between two intermediate supports of a structure. While printing horizontal spans is discouraged, certain geometries print well. For a 5 mm wide and 3 mm thick beam, spans longer than 18 mm are likely to fail. Wider beams must be kept shorter to avoid breaking during the printing  process." src="content/images/design_guide/makerbot/maxbridge-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Vertical-Wire Diameter" data-thickness="1.6 mm (7 mm tall) - 3.2 mm (30 mm tall) " data-spec_description="A wire is a feature whose length is greater than two times its width. The ratio is key to printing wires; at 1.6 mm thickness you can print up to 7 mm tall before you start to see waving. 3.2 mm wires can get up to 30 mm tall without defects." src="content/images/design_guide/makerbot/minverticalwiremakerbot-01.png">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Embossed Detail" data-thickness="0.4mm" data-spec_description="Embossed details are shallow raised features on your model, such as text. Details smaller than 0.4 mm in thickness and in height may not be visible on your print." src="content/images/design_guide/makerbot/mindebosseddetail-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Engraved Detail" data-thickness="0.8mm" data-spec_description="Engraved details are imprinted or recessed features on your model. Details recessed less than 0.8 mm in thickness and in height may not be visible because they will be fused with the rest of the model during the print process." src="content/images/design_guide/makerbot/minembosseddetail-01.png">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Clearance" data-thickness="0.8mm" data-spec_description="Clearance is the amount of distance needed between two moving parts of a model (e.g., the distance between gears or joints). A clearance of less than 0.8 mm may cause parts to fuse." src="content/images/design_guide/makerbot/minclearance-01.png">
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                                <img class="design_spec" data-spec_title="Minimum Hole Diameter" data-thickness="1.6mm" data-spec_description="Holes with a diameter less than 1.6 mm in the x, y, and z axes may close off during printing." src="content/images/design_guide/makerbot/minholediameterform.png">
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="row button_container" style="padding-top: 50px;">
+                                                                                <div class="col-md-12 design_guide_buttons">
+                                                                                        <a class="design_guide active">Design Guide</a>
+                                                                                        <a class="design_guide_close"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div> 
+                                                        </div> 
+                                                        <div id="Design_Specification">
+                                                                <a class="close_box design_specification"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                                <img id='Design_Spec_Image' src=""/>
+                                                                <h3 id='Design_Spec_Title'></h3>
+                                                                <p id='Design_Spec_Thickness'></p>
+                                                                <p id='Design_Spec_Description'></p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div id="FAQ" class="dialog_container hidden_page">
+                        <a class="close_box contact"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        <div class="FAQ_title">
+                                <h2>FAQs</h2>
+                        </div>
+                        <div style="overflow: auto;">
+                                <div class="table">
+                                        <div class="table_cell">  
+                                                <div id="FaqAccordion">
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                                                                    Are there discounts for Students?
+  
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse1" class="panel-collapse collapse">
+                                                                        <div class="panel-body"></div>
+                                                                        Yes, we do offer 25% discount to students.
+                                                                        Please check the student box and use your student email address when on the file upload page.  
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                                                                        How are costs calculated?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse2" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                We calculate the amount of material used during printing.
+
+For both General Purpose Plastics (FDM) & High Detail Resin (SLA) we charge based on the volume of the object. 
+
+FDM - Printed with a lower infill to save weight, time and material. You will only be charged for the actual amount of material used when printing on these type of printers. We use a default infill of 20% for our initial quote however different settings can be selected once your order has been requested. It is possible to print parts at higher infills but this would incur extra cost. 
+
+SLA - We charge based on the volume of the object but most SLA prints require support material therefore the cost of that will be calculated after the order request.
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                                                                       Are there size limitations?
+
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse3" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                               Our build volumes are:
+For General Purpose Plastics (FDM): 285L x 153W x 155H (mm)
+For High Detailed Resin (SLA): 145L x 145W x 175H (mm)
+
+Objects that exceed the maximum build volume can often be sliced into parts and bonded together after printing.  
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                                                                    What is support material?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse4" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                Dependant on the design, both General Purpose Plastics (FDM) and High Detailed Resin (SLA) require support material. These supports are printed at the same time as the part and are positioned as to be easily removed from the model as possible. Please see guide for removing support marks. 
+
+High Detail Resin (SLA)
+https://formlabs.com/support/finishing/removing-support-marks/
+
+General Purpose Plastics (FDM)
+https://www.youtube.com/watch?v=GU2i-s--eLc    
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                                                                     Can I cancel once I have placed my order?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse5" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                We start production once payment has gone through, after this time if we have started to produce the model or we have started repairing your mesh then cancellation may incur a charge. If we have not carried out any processing then cancellation may be possible, please email hub@e8make.com as soon as possible if you need to cancel.   
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                                                                     Which file types can I upload?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse6" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                You can upload STL or OBJ files, the standard files used in the 3D printing industry.
+Note: As STL files don&#39;t contain information on what measurement unit was used to create the model, it is important that you know which measurement unit your 3D program uses in mm, cm or inches, before you export it.
+Once you’re done with the export, you can upload a 3D design for printing and specify the measurement units in mm, cm or inches within the file uploader.   
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                                                                                        Can you repair files?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse7" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                Yes we do offer a file fixing service. We will tell you if your file is broken and how much it will cost to fix it. If fixing time is under 10 minutes no cost will incur. 
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                                                                                        I don&#39;t have a 3D digital model, can you still give me a price?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse8" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                We offer a full CAD service and can create files from descriptions or drawings. Please send us an email to hub@e8make.com with your hopes, dreams and desires and we will get back to you with a quote.
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                                                                                         Can I 3D print proprietary, confidential designs under NDA?
+
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse9" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                Yes, you can. We do not 3D print copies of customer’s designs unless these have been requested by the customer, and we will sign an NDA (non-disclosure agreement) if required.
+
+For signing an NDA, please email us at hub@e8make.com describe your project and the NDA requirement before sending details of your enquiry.
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+                                                                                        What material should I pick for my project?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse10" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                You can learn about our 3D printing materials and compare them here
+                                                                                As a quick rule of thumb:
+                                                                                - Basic prototypes without many complex shapes/overhang: General Purpose Plastics
+                                                                                - Small intricate parts with a lot of details: Standard High Detail Resin
+                                                                                - Strong functional parts: Tough High Detail Resin, Flexible High Detail Resin, General Purpose Plastics (100% Infill)
+                                                                                - Parts for casting: Castable High Detail Resin
+
+                                                                                If you are unsure of what material you want to use, we can take a look at your model and give you quotes from multiple materials. 
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+                                                                                        Is my 3D design suitable for printing?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse11" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                When you upload your 3D design for printing, we check each file for holes (non-manifold geometry) before production. This initial check is to ensure that your model is a so-called solid mesh – a model where all the edges of the polygons that build up the model are connected to one-another (manifold geometry). We also look out for issues with the design and will get back to you if any amendments are necessary.
+                                                                                Nevertheless, we highly recommend ensuring that your file meets the basic design requirements for 3D printing beforehand. If you’re unsure, visit our guide for detailed information.
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse12">
+                                                                                        How can I get an invoice for my order?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse12" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                Once you send the files through we will generate an invoice with a payment gateway to send to you. 
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse13">
+                                                                                   Do you have a minimum charge?    
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse13" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                                We have a minimum part charge which may apply to small parts on smaller orders. The minimum part charge is to cover the cleaning process as it’s very time consuming to hand clean very small things. 
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="panel">
+                                                                <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse14">  
+                                                                                        Are there discounts for batch production runs?
+                                                                                </a>
+                                                                        </h4>
+                                                                </div>
+                                                                <div id="collapse14" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+We offer discount on orders that have large quantities of the same part. Ask us to give you a quantity pricing breakdown on the file upload page.
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div id="Contact" class="dialog_container hidden_page">
+                        <a class="close_box contact"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        <div class="table">
+                                <div class="table_cell">  
+                                         <div id="Contact_Form">
+                                               <div class="row">
+                                                        <div class="col-md-12" style="width: 100%;overflow: hidden;height: 165px;">
+                                                                <div style="width: 100%; height: 225px;">
+                                                                    <div id="map"></div>
+                                                                    <style>
+                                                                        div#map {
+                                                                            position: initial !important;
+                                                                            height: 200px;
+                                                                            width: 100%;
+                                                                            width: 700px;
+                                                                            margin-top: 25px;
+                                                                        }
+                                                                        div#map > div {
+                                                                            width: 99.9% !important;
+                                                                            position: relative !important;
+                                                                        }
+                                                                    </style>
+                                                                        <script>
+                                                                        var map;
+                                                                           function initMap() {
+                                                                                        //51.554795, -0.071579
+                                                                                        var e8make_hackney = {lat: 51.554795, lng: -0.071579};
+                                                                                        //51.535277, -0.125601
+                                                                                        var e8make_kingsCross = {lat: 51.535277, lng: -0.125601};
+                                                                                        var midpoint = {lat: 51.545063, lng: -0.098647}
+                                                                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                                                                        zoom: 12,
+                                                                                        center: midpoint
+                                                                                        });
+                                                                                        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+                                                                                        var marker_hackney = new google.maps.Marker({
+                                                                                                position: e8make_hackney,
+                                                                                                map: map,
+                                                                                                icon: 'content/images/pictures/E8Make_Map-Marker(Smaller).png',
+                                                                                                url: 'https://maps.google.com?saddr=Current+Location&daddr=' + e8make_hackney['lat'] + ',' + e8make_hackney['lng'] + ''
+                                                                                        });
+                                                                                        marker_kings_cross = new google.maps.Marker({
+                                                                                                position: e8make_kingsCross,
+                                                                                                map: map,
+                                                                                                icon: 'content/images/pictures/E8Make_Map-Marker(Smaller).png',
+                                                                                                url: 'https://maps.google.com?saddr=Current+Location&daddr=' + e8make_kingsCross['lat'] + ',' + e8make_kingsCross['lng'] + ''
+                                                                                        });
+                                                                                        google.maps.event.addListener(marker_hackney, 'click', function() {
+                                                                                                window.open(this.url, '_blank');
+                                                                                        });
+                                                                                        google.maps.event.addListener(marker_kings_cross, 'click', function() {
+                                                                                                window.open(this.url, '_blank');
+                                                                                        });
+                                                                                }
+                                                                        </script>
+                                                                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc_UfDHWKu3v40DBdN4RDRBUZkgMPMrcw&callback=initMap"async defer></script>
+                                                                </div>
+                                                               <!-- <div class="map_container">
+                                                                        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1KyhE8FrlcEDpnfsfhSgdbmJ7GRI&amp;z=12" width="100%" height="250" frameborder="0" style="border:0; margin-top: -50px;"></iframe>
+                                                                </div>-->
+                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <div class="address">
+                                                                        <div class="table">
+                                                                                <div class="table_cell">
+                                                                                        <div class="row">
+                                                                                                <div class="col-md-12">
+                                                                                                        <h3>E8 Make - Hackney</h3>
+                                                                                                        <br/>
+                                                                                                        <p><a href="https://www.google.co.uk/maps/place/Farleigh+Rd,+London+N16+7TQ/@51.5549188,-0.0727595,17z/data=!3m1!4b1!4m5!3m4!1s0x48761c8ac519cd01:0x58fcb5fd68ce6302!8m2!3d51.5550792!4d-0.0713608" target="_blank">Farleigh Road, N16</a><br/>
+                                                                                                        <a><i class="fa fa-phone" aria-hidden="true"></i> 07864074050</a></p>
+                                                                                                        <br/>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                                <div class="col-md-12">
+                                                                                                        <h3>E8 Make - Kings Cross</h3>
+                                                                                                        <br/>
+                                                                                                        <p><a href="https://www.google.co.uk/maps/place/Granary+Square,+Kings+Cross,+London+N1C+4AA/@51.5351921,-0.1274358,17z/data=!3m1!4b1!4m5!3m4!1s0x48761b3d9035396b:0x87d7405a11148df9!8m2!3d51.5351888!4d-0.1252471" target="_blank">Granary Square, Kings Cross, N1C 4AA</a><br/>
+                                                                                                        <a><i class="fa fa-phone" aria-hidden="true"></i> 07792625599</a></p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="between_column_border"></div>
+                                                        <div class="col-md-6 contact_form_disabled" style="text-align: right;">
+                                                                <div class="contact_form_disabled_cover">
+                                                                        <h1>Form under construction, <br/> it'll be up soon.</h1>
+                                                                        <div></div>
+                                                                </div>
+                                                                <div class="table">
+                                                                        <div class="table_cell">
+                                                                                <div class="form">
+                                                                                        <form id="contact_page_form" action="contact.php" method="POST">
+                                                                                                <div class="form-group">
+                                                                                                        <input type="text" class="form-control" id="Input_Name" name="name" aria-describedby="emailHelp" placeholder="Name">
+                                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                        <input type="email" class="form-control" id="Input_Email" name="email" placeholder="Email">
+                                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                        <textarea class="form-control" id="Input_Message" name="message" placeholder="Message" rows="3"></textarea>
+                                                                                                </div>
+                                                                                                <button type="submit" id="Input_Submit" name="submit" class="btn btn-primary">Submit</button>
+                                                                                        </form>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</body>
+</html>
